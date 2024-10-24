@@ -1,27 +1,70 @@
 #hero {
+    max-width: 100%;
+    height: 948px;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 120px;
+        height: 100px;
+        right: -1rem;
+        top: 19rem;
+        filter: blur(90px);
+        background-color: var(--pink-low);
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 120px;
+        height: 100px;
+        left: -1rem;
+        bottom: 18rem;
+        filter: blur(90px);
+        background-color: var(--pink-low);
+    }
+
+    @media (max-width: 80em) {
+        height: 590px; 
+        
+        &::before, &::after {
+            display: none; 
+        }
+    }
+}
+
+#hero > div {
+    max-width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+#hero > div::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height:100%;
     background: url('../assets/images/hero-background.png') no-repeat center/cover;
+    opacity: 0;
+    animation: opacity 3.5s 100ms ease-in-out forwards;
+    z-index: -1;
 }
 
 nav {
     display: flex;
-    padding-block: 3.5rem 10.25rem;
     align-items: center;
     justify-content: space-between;
+    margin-inline: auto;
+    padding-top: 3.75rem;
     @media (max-width: 80em) {
-        padding-block: 1.25rem 3rem;
-    }
-}
-
-img {
-    width: 14.375rem;
-    height: 3.625rem;
-    @media (max-width: 80em) {
-        width: 4rem;
-        height: 3rem;
+        padding-top: 1.250rem;
     }
 }
 
 .button {
+    position: relative;
     border-radius: 0.5rem;
     border: none;
     background-color: var(--pink-dark);
@@ -29,36 +72,66 @@ img {
     font: var(--button);
     color: var(--text-title);
     cursor: pointer;
-}
 
-.button-text {
-    font-size: 14px;
-    font-weight: 700;
-}
-
-h1 {
-    text-align: center;
-}
-
-p {
-    text-align: center;
-    font-size: 1.25rem;
-    max-width: 35.5rem;
-    @media (max-width: 80em) {
+    span {
         font-size: 0.875rem;
-        max-width: 21rem;
+        position: relative;
+        z-index: 1;
+        font-weight: 700;
     }
 }
 
-.tittle {
+.button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--pink-base);
+    clip-path: circle(0%);
+    z-index: 0;
+    transition: 600ms;
+    border-radius: 0.5rem;
+}
+
+.button:hover::after {
+    clip-path: circle(100%);
+} 
+
+.hero-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    text-align: center;
     gap: 2rem;
-    padding-bottom: 40%;
+    padding-top: 10rem;
+
+    h1 {
+        opacity: 0;
+        animation: opacity 3s 0.8s forwards;
+    }
+    
+    p {
+        font-size: 1.25rem;
+        max-width: 35.5rem;
+        opacity: 0;
+        animation: opacity 3s 1.4s forwards;
+
+        @media (max-width: 80em) {
+            font-size: 0.875rem;
+            max-width: 21rem;
+        }
+    }
+
     @media (max-width: 80em) {
         gap: 1rem;
-        padding-bottom: 50%;
+        padding-top: 6rem;
     }
+}
+
+@keyframes opacity {
+    100% {
+      opacity: 1;
+    }  
 }

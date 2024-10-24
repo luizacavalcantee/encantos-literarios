@@ -1,8 +1,8 @@
-.product {
+.product { 
     text-align: center;
     position: relative;
     padding-top: 5.5rem;
-    height: 65rem;  
+    height: 65rem;
 }
 
 .product header img {
@@ -10,14 +10,13 @@
 }
 
 .product header div {
-    display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
     margin-bottom: 0.5rem;
 }
 
-.main-book {
+.product .main-book {
     position: relative;
     display: flex;
     justify-content: center;
@@ -26,7 +25,7 @@
     margin-inline: auto;
 }
 
-.main-book::before {
+.product .main-book::before {
     content: "";
     position: absolute;
     background-color: var(--pink-low);
@@ -39,90 +38,83 @@
     z-index: 0;
 }
 
-.main-book img {
+.product .main-book img {
     object-fit: cover;
     margin-top: 6.5rem;
 }
 
-.main-book img:not([src*="main-book"]), .main-book span {
+.product .main-book img:not([src*="main-book"]), 
+.product .main-book span {
     position: absolute;
     z-index: 0; 
 }
 
-.main-book [src*="main-book"] {
+.product .main-book [src*="main-book"] {
     position: absolute;
-    width: 468px; 
-    height: 622px; 
+    width: 445px;
     left: 50%;
     transform: translateX(-50%);
     top: -.5rem;
     z-index: 10;
 }
 
-.main-book [src*="yellow"] {
+.product .main-book [src*="yellow"] {
     position: absolute;
     width: 172px;
-    height: 536px;
     top: 6rem;
     left: 50%;
     transform: translate(20%) rotate(0deg);
     transition: transform 500ms ease;
 }
 
-.main-book [src*="purple"] {
+.product .main-book [src*="purple"] {
     position: absolute;
     width: 172px;
-    height: 536px;
     top: 5.5rem;
     left: 50%;
     transform: translate(15%) rotate(0deg);
     transition: transform 500ms ease, rotate 500ms ease;
 }
 
-.main-book [src*=pin] {
+.product .main-book [src*=pin] {
     position: absolute;
     width: 222px;
-    height: 254px;
     top: 18rem;
     left: 50%;
     transform: translateX(-50%);
     transition: transform 500ms ease;
 }
 
-.main-book [src*="Vector-isolado"] {
+.product .main-book [src*="Vector-isolado"] {
     position: absolute;
-    width: 175px;
-    height: 30px;
+    width: 172px;
     top: 18rem;
     left: 50%;
     transform: translate(-50%) rotate(0deg);
     transition: transform 500ms;
 }
 
-.main-book [src*="Vector-bookmark"] {
+.product .main-book [src*="Vector-bookmark"] {
     position: absolute;
     width: 145px;
-    height: 152px;
     top: 17rem;
     left: 50%;
     transform: translateX(25%);
     transition: transform 500ms ease;
-    overflow: visible;
 }
 
-.main-book [src*="Vector-broche"] {
+.product .main-book [src*="Vector-broche"] {
     position: absolute;
     width: 105px;
-    height: 127px;
     top: 24rem;
     left: 50%;
     transform: translateX(-50%);
     transition: transform 500ms ease;
 }
 
-.main-book span:nth-child(8) {
+.product .main-book span:nth-child(8) {
     position: absolute;
-    font: 400 16px/100% 'raleway', sans-serif;
+    font: 400 1rem/140% 'raleway', sans-serif;
     width: 12rem;
     top: 14rem;
     left: 50%;
@@ -130,9 +122,9 @@
     transition: transform 500ms ease;
 }
 
-.main-book span:nth-child(9) {
+.product .main-book span:nth-child(9) {
     position: absolute;
-    font: 400 16px/100% 'raleway', sans-serif;
+    font: 400 1rem/140% 'raleway', sans-serif;
     width: 12rem;
     top: 21rem;
     left: 50%;
@@ -140,11 +132,11 @@
     transition: transform 550ms ease;
 }
 
-.main-book span:nth-child(10) {
+.product .main-book span:nth-child(10) {
     position: absolute;
-    font: 400 16px/100% 'raleway', sans-serif;
+    font: 400 1rem/140% 'raleway', sans-serif;
     width: 12rem;
-    top: 36rem;
+    top: 35rem;
     left: 50%;
     transform: translateX(5%);
     transition: transform 500ms ease;
@@ -152,12 +144,10 @@
 
 .main-book:hover [src*="yellow"] {
     transform: translate(12.5rem, -7rem) rotate(11deg);
-    overflow: visible;
 }
 
 .main-book:hover [src*="purple"] {
     transform: translate(17rem, -1rem) rotate(25deg);
-    overflow: visible;
 }
 
 .main-book:hover [src*=pin] {
@@ -187,7 +177,6 @@
 
 .main-book:hover span:nth-child(10) {
     transform: translate(10.2rem, 13.2rem);
-    overflow: visible;
 }
 
 @media (max-width: 80em) {
@@ -200,7 +189,7 @@
     }
 
     .product header div {
-        gap: 0.75rem;
+        gap: .75rem;
     }
 
     .main-book {
@@ -217,73 +206,63 @@
 
     .main-book [src*="main-book"] {
         width: 157px;
-        height: 207px;
         top: 0rem;
         left: 50%;
         transform: translateX(-50%);
     }
 
     .main-book [src*="yellow"] {
-        width: 58px;
-        height: 180px;
-        top: -1rem;
-        left: 45%;
-        overflow: visible;
-        transform: translate(119%) rotate(2deg);
+        width: 4rem;
+        top: .8rem;
+        left: 50%;
+        transform: translate(119%) rotate(11deg);
     }
 
     .main-book [src*="purple"] {
-        width: 58px;
-        height: 180px;
+        width: 4rem;
         top: 3rem;
         left: 50%;
-        overflow: visible;
-        transform: translate(155%) rotate(1deg);
+        transform: translate(155%) rotate(22deg);
     }
 
     .main-book [src*=pin] {
-        width: 75px;
-        height: 85px;
+        width: 4rem;
         top: 11.5rem;
-        left: 58%;
+        left: 50%;
         transform: translate(-190%) rotate(-8deg);
     }
 
     .main-book [src*="Vector-isolado"] {
-        width: 58px;
-        height: 10px;
-        top: -0.575rem;
+        width: 4rem;
+        top: -.575rem;
         left: 50%;
         transform: translate(-217%) rotate(0deg);
     }
 
     .main-book [src*="Vector-bookmark"] {
-        width: 49px;
-        height: 51px;
+        width: 4rem;
         top: 13rem;
         left: 50%;
         transform: translate(140%) rotate(0deg);
     }
 
     .main-book [src*="Vector-broche"] {
-        width: 35px;
-        height: 42px;
+        width: 2.5rem;
         top: 9.5rem;
         left: 50%;
         transform: translate(-385%) rotate(-10deg);
     }
 
     .main-book span:nth-child(8) {
-        width: 8rem;
+        width: 12rem;
         font: 400 10px/100% 'raleway', sans-serif;
-        top: 23.5rem;
+        top: 24rem;
         left: 50%;
         transform: translate(0%) rotate(0deg);
     }
 
     .main-book span:nth-child(9) {
         width: 12rem;
-        font: 400 10px/100% 'raleway', sans-serif;
         top: 14.75rem;
         left: 50%;
         transform: translate(-123%) rotate(0deg);
@@ -291,7 +270,6 @@
 
     .main-book span:nth-child(10) {
         width: 12rem;
-        font: 400 10px/100% 'raleway', sans-serif;
         top: 4.6rem;
         left: 50%;
         transform: translate(-114%) rotate(0deg);
