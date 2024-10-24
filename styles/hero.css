@@ -1,9 +1,5 @@
 #hero {
-    min-height: 59.25rem;
     background: url('../assets/images/hero-background.png') no-repeat center/cover;
-    @media (max-width: 80em) {
-        min-height: 29rem;
-    }
 }
 
 nav {
@@ -60,9 +56,9 @@ p {
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    margin-bottom: 29.375rem;
+    padding-bottom: 40%;
     @media (max-width: 80em) {
         gap: 1rem;
-        margin-bottom: 12rem;
+        padding-bottom: 50%;
     }
 }

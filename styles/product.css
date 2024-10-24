@@ -5,11 +5,19 @@
     height: 40rem;  
 }
 
+.product header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .product header img {
     width: 3rem;
 }
 
 .product header div {
+    display: flex;
     justify-content: center;
     align-items: center;
     gap: .75rem;
@@ -47,14 +55,15 @@
     margin-top: 6.5rem;
 }
 
-.main-book img:not([src*="book-main"]), .main-book span {
+.main-book img:not([src*="main-book"]), .main-book span {
     position: absolute;
     z-index: 0; 
 }
 
-.main-book [src*="book-main"] {
+.main-book [src*="main-book"] {
     position: absolute;
-    width: 157px;
+    width: 29rem;
+    height: 38rem;
     left: 50%;
     transform: translateX(-50%);
     top: 0rem;
@@ -63,25 +72,30 @@
 
 .main-book [src*="yellow"] {
     position: absolute;
-    width: 4rem;
+    width: 172px;
+    height: 536px;
     top: .8rem;
     left: 50%;
+    overflow: hidden;
     transform: translate(119%) rotate(11deg);
     z-index: 2;
 }
 
 .main-book [src*="purple"] {
     position: absolute;
-    width: 4rem;
+    width: 172px;
+    height: 536px;
     top: 3rem;
+    overflow: hidden;
     left: 50%;
     transform: translate(155%) rotate(22deg);
     z-index: -1; 
 }
 
-.main-book [src*=broche] {
+.main-book [src*=pin] {
     position: absolute;
-    width: 4rem;
+    width: 222px;
+    height: 254px;
     top: 11.5rem;
     left: 50%;
     transform: translate(-190%) rotate(-8deg);
@@ -90,8 +104,10 @@
 
 .main-book [src*="Vector-isolado"] {
     position: absolute;
-    width: 4rem;
+    width: 175px;
+    height: 30px;
     top: -.575rem;
+    overflow: visible;
     left: 50%;
     transform: translate(-217%) rotate(0deg);
     z-index: 1;
@@ -99,8 +115,10 @@
 
 .main-book [src*="Vector-bookmark"] {
     position: absolute;
-    width: 4rem;
+    width: 145px;
+    height: 152px;
     top: 13rem;
+    overflow: visible;
     left: 50%;
     transform: translate(140%) rotate(0deg);
     z-index: 1;
@@ -108,7 +126,9 @@
 
 .main-book [src*="Vector-broche"] {
     position: absolute;
-    width: 2.5rem;
+    width: 105px;
+    height: 127px;
+    overflow: visible;
     top: 9.5rem;
     left: 50%;
     transform: translate(-385%) rotate(-10deg);
@@ -146,11 +166,11 @@
     .product {
         height: 65rem;
     }
-
+    
     .product header img {
         width: 5rem;
     }
-
+    
     .product header div {
         gap: 1rem;
     }
@@ -158,11 +178,9 @@
 
 @media (min-width: 80em) {
     .main-book {
-        height: 88%;
-        width: 80%;
         margin-inline: auto;
     }
-
+    
     .main-book::before {
         filter: blur(300px);
         width: 40rem;
@@ -170,7 +188,7 @@
         top: 3.5rem;
         transform: translate(-50%);
     }
-
+    
     .main-book [src*="book-main"] {
         width: 445px;
         top: -.5rem;
@@ -194,7 +212,7 @@
         transition: transform 500ms ease, rotate 500ms ease;
     }
 
-    .main-book [src*=broche] {
+    .main-book [src*=pin] {
         width: 222px;
         top: 18rem;
         left: 50%;
@@ -255,13 +273,15 @@
 
     .main-book:hover [src*="yellow"] {
         transform: translate(12.5rem, -7rem) rotate(11deg);
+        overflow: visible;
     }
 
     .main-book:hover [src*="purple"] {
         transform: translate(17rem, -1rem) rotate(25deg);
+        overflow: visible;
     }
 
-    .main-book:hover [src*=broche] {
+    .main-book:hover [src*=pin] {
         transform: translate(-21.9rem, 5rem);
     }
 

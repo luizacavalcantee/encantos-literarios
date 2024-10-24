@@ -1,0 +1,135 @@
+footer {
+    background-image: url(../assets/images/book-trace-background.png);
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    overflow: hidden;
+  
+    margin-top: 7rem;
+    padding-top: 6rem;
+    width: 100vw;
+    height: auto;
+  
+    & header {
+      margin-inline: auto;
+      text-align: center;
+  
+      & img:nth-child(1){
+        width: 12rem;
+      }
+  
+      & .social-links {
+        display: flex;
+        margin-top: .75rem;
+        padding-top: .75rem;
+        border-top: 1px solid var(--shape-stroke);
+        justify-content: space-between;
+        gap: 1rem;
+        & a {
+          width: 3rem;
+          height: 3rem;
+          padding: .5rem;
+        }
+      }
+    }
+  
+    & .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-bottom: 2.25rem;
+      padding-top: 2.5rem;
+      
+      & p{
+        font: 700 1rem/140% 'raleway', sans-serif;
+        color: var(--text-title);
+        margin-bottom: 1rem;
+      }
+      & span {
+        display: block;
+        font: 600 12px/140% 'raleway', sans-serif;
+        color: var(--blue-light);
+        margin-block: .75rem;
+      }
+    }
+  }
+  
+  @media (width >= 80em) {
+    footer {
+      background-size: contain;
+      display: inline-flex;
+      justify-content: space-between;
+      gap: 15rem;
+      padding-block: 10rem 6.375rem;
+  
+      & header {
+        width: 16.5rem;
+        & img:nth-child(1){
+          width: 100%;
+        }
+  
+        & .social-links {
+          display: flex;
+          gap: .25rem;
+          
+          & a {
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            
+            z-index: 0;
+            height: 2.5rem;
+            border-radius: 2rem;
+            transition: 350ms ease;
+  
+            &::after {
+              content: "";
+              position: absolute;
+              z-index: -1;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              scale: 0;
+              background-color: var(--shape-stroke);
+              border-radius: 2rem;
+              transition: 350ms ease;
+            }
+  
+            &:hover {
+              & svg path {
+                fill: #ffffff;
+              }
+  
+              &::after {
+                scale: 1;
+              }
+            }
+          }
+        }
+      }
+  
+      & .content-grid {
+        display: grid;
+        padding-top: unset;
+        padding-bottom: unset;
+        gap: 3.5rem;
+  
+        & p {
+          padding-bottom: .5rem;
+        }
+  
+        & span {
+          font-size: 14px;
+          margin-block: 1rem;
+        }
+  
+        span:hover {
+          cursor: pointer;
+          color: var(--text-body);
+        }
+  
+      }
+    }
+  }
